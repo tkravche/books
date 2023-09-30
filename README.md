@@ -13,8 +13,8 @@ Bookshelf App is an application for book worms that gives a possiblity to browse
 <h2 align="left">Features</h2>
 <div align="left">
 The application consists of 2 pages:<br />
-• a <strong>"Home"</strong> page is divided into two parts: list of book categories and the virtual bookshelves with books sorted by categories.<br />
-• a <strong>"Shopping list"</strong> page, which contains a list of saved books for future shopping.
+• <strong>"Home"</strong> page is divided into two parts: list of book categories and the virtual bookshelves with books sorted by categories.<br />
+• <strong>"Shopping list"</strong> page, which contains a list of saved books for future shopping.
 
 <h3 align="left">Technologies Used</h3>
 <strong>Frontend:</strong> JavaScript, CSS, HTML, SASS, Parcel, REST API</br>
