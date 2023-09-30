@@ -1,0 +1,138 @@
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-wrapper {
+  width: 579px;
+  // height: 501px;
+  padding: 40px;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--main-text-cl-dark-theme);
+  // padding: 40px;
+  border-radius: 18px;
+  border: 1px solid var(--main-text-cl-light-theme);
+}
+
+.close-modalbtn {
+  padding: 0;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 14px;
+  cursor: pointer;
+  stroke: black;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  transform:none;
+}
+
+// .popup-about-book__close-btn-icon {
+//   stroke: var(--main-text-cl-light-theme);
+//   transition: stroke var(--timing-function);
+// }
+// .popup-about-book__close-btn-icon:hover {
+//   stroke: var(--accent-cl);
+// }
+
+.close-modalbtn:hover {
+  stroke: var(--accent-cl);
+  }
+
+.popup__wrapper {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.popup__book-image {
+  width: 192px;
+  height: 281px;
+}
+.popup__book_title {
+  margin-bottom: 8px;
+  color: var(--main-text-cl-light-theme);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: calc(28 / 24);
+  letter-spacing: -0.96px;
+  width: 279px;
+}
+.popup__book_author {
+  margin-bottom: 20px;
+  color: var(--secondary-text-cl);
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: calc(18 / 14);
+  letter-spacing: -0.56px;
+}
+
+.popup__book_description {
+  margin-bottom: 20px;
+  color: var(--main-text-cl-light-theme);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: calc(18 / 14);
+  letter-spacing: -0.56px;
+}
+
+.popup__shopping-links-container {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.popup__shopping-links-icon {
+  filter: grayscale(0.9);
+  transition: filter var(--timing-function);
+}
+.popup__shopping-links-icon:hover {
+  filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.3));
+}
+
+.add-bookBtn {
+  min-width: 499px;
+  padding: 20px 90px;
+  border-radius: 40px;
+  border: 2px solid var(--accent-cl);
+  color: var(--main-text-cl-light-theme);
+  background-color: var(--main-text-cl-dark-theme);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: calc(24 / 18);
+  letter-spacing: -0.18px;
+  text-transform: uppercase;
+  transition: color var(--timing-function),
+    background-color var(--timing-function), box-shadow var(--timing-function);
+}
+.add-bookBtn:hover,
+.add-bookBtn:focus {
+  background-color: var(--accent-cl);
+  color: var(--main-text-cl-dark-theme);
+  box-shadow: 1px 2px 5px 0px rgb(79, 46, 232);
+}
+
+.under-btn-text {
+  width: 324px;
+  color: #11111180;
+  letter-spacing: -0.56px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 8px;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: calc(14 / 10);
+}

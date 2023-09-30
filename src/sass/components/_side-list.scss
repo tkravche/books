@@ -1,0 +1,36 @@
+.categories-list-wrapper {
+  height: 806px;
+  width: 356px;
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+  padding-top: 40px;
+  overflow-y: scroll;
+  margin-left: 0x;
+  padding: 0;
+}
+.category-item {
+  margin-top: 32px;
+  color: rgba(17, 17, 17, 0.6);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: calc(24 / 17);
+  letter-spacing: -0.36px;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--accent-cl);
+    text-transform: uppercase;
+  }
+}
+.categories-list-title {
+  margin-top: 0;
+  font-size: 19px;
+  color: rgba(17, 17, 17, 0.95);
+}
+.current {
+  color: var(--accent-cl);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+ 

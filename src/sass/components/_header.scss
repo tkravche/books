@@ -1,0 +1,38 @@
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  margin-bottom: 40px;
+  padding: 12px 24px;
+  border: 1.5px solid #111111;
+  border-radius: 0px 0px 8px 8px;
+  background-color: var(--main-text-cl-dark-theme);
+}
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  padding-left: 76px;
+  gap: 24px;
+}
+.icon-cart{
+  margin-left: 8px;
+  display: inline-block;
+}
