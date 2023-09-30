@@ -1,4 +1,5 @@
 import { refs } from './refs';
+import { common } from './common';
 import { getBookById } from './booksAPI-service';
 import dumpSvg from '../images/icons/sprite.svg';
 import amazonImg1 from '../images/amazon1.png';
@@ -12,7 +13,8 @@ import bookShopImg2 from '../images/bookshop2.png';
 import bookShopImg3 from '../images/bookshop3.png';
 import books from '../images/books1.png';
 
-const shoppingBookIdsList = JSON.parse(localStorage.getItem('shoppingList'));
+
+const  shoppingBookIdsList = JSON.parse(localStorage.getItem(common.KEY_SHOPPING))?? [];
 
 function createShoppingListMarkup({
   _id,
@@ -121,7 +123,7 @@ function showEmptyShoppingListMessage() {
   `;
 }
 
-if (shoppingBookIdsList === null || shoppingBookIdsList.length === 0) {
+if (shoppingBookIdsList.length === 0) {
   showEmptyShoppingListMessage();
 } else populateShoppingList(shoppingBookIdsList);
 
@@ -130,9 +132,9 @@ function deleteShoppingListItem(e) {
     const bookId = e.target.closest('li').dataset.id;
     const bookIndex = shoppingBookIdsList.findIndex(id => id === bookId);
     shoppingBookIdsList.splice(bookIndex, 1);
-    localStorage.setItem('shoppingList', JSON.stringify(shoppingBookIdsList));
+    localStorage.setItem(common.KEY_SHOPPING, JSON.stringify(shoppingBookIdsList));
     refs.shoppingList.innerHTML = '';
-    if (shoppingBookIdsList === null || shoppingBookIdsList.length === 0) {
+    if (shoppingBookIdsList.length === 0) {
       showEmptyShoppingListMessage();
     } else populateShoppingList(shoppingBookIdsList);
   }

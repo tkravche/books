@@ -1,4 +1,5 @@
 import { refs } from './refs';
+import { common } from './common';
 import { getBookById } from './booksAPI-service';
 import amazonImg1 from '../images/amazon1.png';
 import amazonImg2 from '../images/amazon2.png';
@@ -11,8 +12,7 @@ import bookShopImg2 from '../images/bookshop2.png';
 import bookShopImg3 from '../images/bookshop3.png';
 import closeSvg from '../images/icons/sprite.svg';
 
-let shoppingIdList = [];
-// localStorage.setItem('shoppingList', JSON.stringify(shoppingIdList));
+
 
 function createBookInfoMarkup({
   _id,
@@ -57,8 +57,19 @@ function createBookInfoMarkup({
 </div>`;
 }
 
-{
-  /* <p class="under-btn-text">Сongratulations! You have added the book to the shopping list. <br> To delete, press the button “Remove from the shopping list”</p> */
+{/* <p class="under-btn-text">Сongratulations! You have added the book to the shopping list. <br> To delete, press the button “Remove from the shopping list”</p> */}
+
+
+
+function adjustShoppingListButton(bookId) {
+  const shoppingIdList = JSON.parse(localStorage.getItem(common.KEY_SHOPPING))?? [];
+   if (!shoppingIdList.includes(bookId)) {
+    const addButton = document.querySelector('.add-bookBtn');
+    addButton.textContent = 'add to the shopping list';
+  } else {
+    const addButton = document.querySelector('.add-bookBtn');
+    addButton.textContent = 'remove from the shopping list';
+  }
 }
 
 function populateModal(itemId) {
@@ -68,20 +79,9 @@ function populateModal(itemId) {
   });
 }
 
-function adjustShoppingListButton(bookId) {
-  const shoppingIdListFromLS = JSON.parse(localStorage.getItem('shoppingList'));
-      if (!shoppingIdListFromLS.includes(bookId) ) {
-      const addButton = document.querySelector('.add-bookBtn');
-      addButton.textContent = 'add to the shopping list';
-    } else {
-      const addButton = document.querySelector('.add-bookBtn');
-      addButton.textContent = 'remove from the shopping list';
-    }
-  }
-
-refs.categoryBookshelf.addEventListener('click', e => {
+refs.categoryBookshelf?.addEventListener('click', e => {
   const parentElement = e.target.closest('.bookshelf-book');
-  if (parentElement) {
+    if (parentElement) {
     const bookId = parentElement.getAttribute('id');
     populateModal(bookId);
     modal.style.display = 'block';
@@ -114,20 +114,20 @@ document.addEventListener('keydown', function (e) {
 });
 
 refs.modal.addEventListener('click', e => {
-  const shoppingIdListFromLS = JSON.parse(localStorage.getItem('shoppingList'));
-  if (e.target.classList.contains('add-bookBtn')) {
+    if (e.target.classList.contains('add-bookBtn')) {
     const bookId = e.target.dataset.id;
-    if (!shoppingIdListFromLS.includes(bookId)) {
+    const shoppingIdList = JSON.parse(localStorage.getItem(common.KEY_SHOPPING))?? [];
+    if (!shoppingIdList.includes(bookId)) {
       shoppingIdList.push(bookId);
       const addButton = document.querySelector('.add-bookBtn');
       addButton.textContent = 'remove from the shopping list';
-      localStorage.setItem('shoppingList', JSON.stringify(shoppingIdList));
+      localStorage.setItem(common.KEY_SHOPPING, JSON.stringify(shoppingIdList));
     } else {
       const bookIndex = shoppingIdList.findIndex(id => id === bookId);
       shoppingIdList.splice(bookIndex, 1);
       const addButton = document.querySelector('.add-bookBtn');
       addButton.textContent = 'add to the shopping list';
-      localStorage.setItem('shoppingList', JSON.stringify(shoppingIdList));
+      localStorage.setItem(common.KEY_SHOPPING, JSON.stringify(shoppingIdList));
     }
   }
 });
