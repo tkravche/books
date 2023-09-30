@@ -5,7 +5,7 @@
   "homepage": "https://tkravche.github.io/books",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /parcel-project-template/"
+    "build": "parcel build src/*.html --public-url /books/"
   },
   "repository": {
     "type": "git",
