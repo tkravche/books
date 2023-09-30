@@ -7,7 +7,7 @@
 
 <h2 align="left">Description</h2>
 <div align="left">
-Bookshelf App is an application for book worms that give a possiblity to browse through books according to their categories, read the full information about the book you like in the pop up window and add this book to your shopping list or click the link to the book store and buy the book immediately.
+Bookshelf App is an application for book worms that gives a possiblity to browse through books according to their categories, read the full information about the book you like in the pop up window and add this book to your shopping list or click the link to the book store and buy the book immediately.
 </div>
 
 <h2 align="left">Features</h2>
