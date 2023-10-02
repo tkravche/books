@@ -1,8 +1,8 @@
 <br />
 <div align="center">
   <img src="./assets/screenshot.png" alt="Homepage" width="350" height="340">
-  <img src="./assets/screenshot_2.png" alt="Modal" width="350" height="340">
-  <img src="./assets/screenshot_3.png" alt="Shopping list" width="350" height="340">
+  <img src="./assets/Screenshot_2.png" alt="Modal" width="350" height="340">
+  <img src="./assets/Screenshot_3.png" alt="Shopping list" width="350" height="340">
 </div>
 
 <h1 align="left">Bookshelf App</h1>
