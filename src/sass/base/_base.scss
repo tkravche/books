@@ -4,11 +4,7 @@ body {
     font-weight: 700;
     font-style: normal;
     background: var(--main-bg-cl);
-   
-    html.dark & {
-      background-color: var(--main-bg-cl-dark-theme);
     }
-  }
   img {
     display: block;
     max-width: 100%;
